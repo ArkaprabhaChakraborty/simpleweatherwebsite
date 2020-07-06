@@ -183,7 +183,7 @@ body {
 <div class="container">
   <div class="widget">
     <div class="details">
-      <div class="temperature">{{temp}}°C</div>
+      <div class="temperature">{{temp}}°C <img src="{{ url_for('static', filename='images/local-filename.png') }}"></div>
       <div class="city" style="font size:8em">{{name}}</div>
       <div class="country" style="font size:6em">{{region}}</div>
       <div class="country" style="font size:6em">{{country}}</div>
@@ -194,10 +194,10 @@ body {
       <div class="summary">
         <p class="summaryText" style= "text align :left">Feels Like: {{feels}}°C</p>
         <p class="summaryText" style= "text align :left">Description: {{des}} </p>
-        <p class="summaryText" style= "text align :left">Wind Speed:{{wind}} </p>
-        <p class="summaryText" style= "text align :left">Pressure:{{pressure}}mBar </p>
-        <p class="summaryText" style= "text align :left">Humidity:{{humid}}% </p>
-        <p class="summaryText" style= "text align :left">Precipitation:{{precip}}mm </p>
+        <p class="summaryText" style= "text align :left">Wind Speed: {{wind}}kph </p>
+        <p class="summaryText" style= "text align :left">Pressure: {{pressure}}mBar </p>
+        <p class="summaryText" style= "text align :left">Humidity: {{humid}}% </p>
+        <p class="summaryText" style= "text align :left">Precipitation: {{precip}}mm </p>
       </div>
       <div class="wind">      </div>
       <div class="wind">Latitude: {{lat}}°</div>
@@ -206,7 +206,7 @@ body {
       <div class="wind">Wind degree: {{wind_degree}}</div>
       <div class="wind">Date and Time: {{time}}</div>
       <div class="wind">Cloud Cover: {{cc}}%</div>
-      <div class="wind">Visibility: {{vis}}</div>
+      <div class="wind">Visibility: {{vis}}km</div>
     </div>
     <div class="pictoBackdrop"></div>
     <div class="pictoFrame"></div>

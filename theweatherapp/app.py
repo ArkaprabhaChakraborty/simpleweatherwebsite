@@ -1,9 +1,9 @@
 import requests
 import json
 from flask import Flask, request, redirect , url_for , render_template
+import urllib.request
+import os
 
-
-import requests
 
 access  = "1f134b83b86790053df58f4222a205c8"
 
@@ -38,7 +38,9 @@ def weather():
     icon = api_result['current']['weather_icons']
     ic = str(icon).replace("['","")
     ic = ic.replace("']","")
-    icon = requests.get(ic)
+    img_url = ic
+    img_name = "/home/arkaprabha/Desktop/simpleweatherwebsite/theweatherapp/static/images/local-filename.png"
+    urllib.request.urlretrieve(img_url,img_name)
     des = str(api_result['current']['weather_descriptions'])
     des = des.replace("['","")
     des = des.replace("']","")
@@ -51,6 +53,6 @@ def weather():
     cc = api_result['current']['cloudcover']
     feels = api_result['current']['feelslike']
     vis = api_result['current']['visibility'] 
-    return render_template("weather.html",temp  = temp, cc = cc,name = name,precip = precip,wind = wind,feels = feels,des = des,wind_dir = wind_dir,time = time, country = country,lat = lat, lon  = lon, wind_degree = wind_degree,pressure = pressure,humid = humid,vis = vis,icon = icon)
+    return render_template("weather.html",temp  = temp, cc = cc,name = name,precip = precip,wind = wind,feels = feels,des = des,wind_dir = wind_dir,time = time, country = country,lat = lat, lon  = lon, wind_degree = wind_degree,pressure = pressure,humid = humid,vis = vis)
 if __name__ == "__main__":
     app.run(debug=True)
