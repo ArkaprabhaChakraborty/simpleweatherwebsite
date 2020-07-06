@@ -1,2 +1,2 @@
 # simpleweatherwebsite
-ki mone hoye ... keno korechi?
+Simple website for weather update
