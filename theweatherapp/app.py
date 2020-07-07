@@ -53,6 +53,6 @@ def weather():
     cc = api_result['current']['cloudcover']
     feels = api_result['current']['feelslike']
     vis = api_result['current']['visibility'] 
-    return render_template("weather.html",temp  = temp, cc = cc,name = name,precip = precip,wind = wind,feels = feels,des = des,wind_dir = wind_dir,time = time, country = country,lat = lat, lon  = lon, wind_degree = wind_degree,pressure = pressure,humid = humid,vis = vis)
+    return render_template("weather.html",temp  = temp, cc = cc,name = name,precip = precip,wind = wind,feels = feels,des = des,wind_dir = wind_dir,time = time, country = country,lat = lat, lon  = lon, wind_degree = wind_degree,pressure = pressure,humid = humid,vis = vis,region  = region)
 if __name__ == "__main__":
     app.run(debug=True)

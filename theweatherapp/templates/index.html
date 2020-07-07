@@ -2,34 +2,11 @@
     <head>
     <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-$morro: #aacbe6;
-$cayucos: #9cd0ff;
-$bahamas: #3cc0fe;
-$capetown: #27a5fd;
-$cabo: #0066ff;
-$reynisfjara: #34373e;
-$svalbard: #d2e9fa;
-
-$bahamasAlpha: rgba($bahamas, 0.7);
-$caboAlpha: rgba($cabo, 0.6);
-
-$capetownShadow: rgba($capetown, 0.4);
-
-$widgetHeight: 400px;
-$pictoBackdropDiameter: $widgetHeight * 1.4;
-$pictoFrameDiameter: $pictoBackdropDiameter * .6;
-$pictoCloudBigDiameter: $pictoFrameDiameter * .65;
-$pictoCloudSmallDiameter: $pictoCloudBigDiameter * .7;
-$pictoCloudFillSize: $pictoCloudSmallDiameter * .7;
-$iconCloudBigDiameter: 36px;
-$iconCloudSmallDiameter: $iconCloudBigDiameter * .65;
-$iconCloudFillSize: $iconCloudSmallDiameter * .7;
-
 *,
 *:after,
 *:before {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -37,39 +14,48 @@ body {
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 98vh;
 }
 
 .widget {
-  background: linear-gradient(to bottom right, $bahamas 20%, $cabo);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(20%, #3cc0fe), to(#0066ff));
+  background: linear-gradient(to bottom right, #3cc0fe 20%, #0066ff);
   width: 900px;
-  height: $widgetHeight;
+  height: 400px;
   border-radius: 6px;
-  box-shadow: 0px 60px 80px -20px $capetownShadow;
+  -webkit-box-shadow: 0px 60px 80px -20px rgba(39, 165, 253, 0.4);
+          box-shadow: 0px 60px 80px -20px rgba(39, 165, 253, 0.4);
   position: relative;
   overflow: hidden;
 }
 
 .pictoBackdrop {
   position: absolute;
-  height: $pictoBackdropDiameter;
-  width: $pictoBackdropDiameter;
+  height: 560px;
+  width: 560px;
   border-radius: 50%;
-  background: linear-gradient(160deg, $bahamasAlpha 40%, $caboAlpha);
+  background: linear-gradient(160deg, rgba(60, 192, 254, 0.7) 40%, rgba(0, 102, 255, 0.6));
   right: -40px;
   top: -90px;
 }
 
 .pictoFrame {
   position: absolute;
-  background: $reynisfjara;
+  background: #34373e;
   border-radius: 50%;
-  box-shadow: 0px 50px 60px -20px $cabo;
-  height: $pictoFrameDiameter;
-  width: $pictoFrameDiameter;
+  -webkit-box-shadow: 0px 50px 60px -20px #0066ff;
+          box-shadow: 0px 50px 60px -20px #0066ff;
+  height: 336px;
+  width: 336px;
   right: 80px;
   top: 25px;
 }
@@ -77,28 +63,32 @@ body {
 .pictoCloudBig {
   position: absolute;
   border-radius: 50%;
-  background: $morro;
-  box-shadow: 20px 20px 80px -20px $morro;
-  height: $pictoCloudBigDiameter;
-  width: $pictoCloudBigDiameter;
+  background: #aacbe6;
+  -webkit-box-shadow: 20px 20px 80px -20px #aacbe6;
+          box-shadow: 20px 20px 80px -20px #aacbe6;
+  height: 218.4px;
+  width: 218.4px;
   top: 80px;
   right: 160px;
 }
+
 .pictoCloudFill {
   position: absolute;
-  background: $morro;
-  box-shadow: 0px 20px 80px -20px $morro;
-  height: $pictoCloudFillSize;
-  width: $pictoCloudFillSize;
+  background: #aacbe6;
+  -webkit-box-shadow: 0px 20px 80px -20px #aacbe6;
+          box-shadow: 0px 20px 80px -20px #aacbe6;
+  height: 107.016px;
+  width: 107.016px;
   top: 191px;
   right: 265px;
 }
+
 .pictoCloudSmall {
   position: absolute;
   border-radius: 50%;
-  background: $svalbard;
-  height: $pictoCloudSmallDiameter;
-  width: $pictoCloudSmallDiameter;
+  background: #d2e9fa;
+  height: 152.88px;
+  width: 152.88px;
   top: 146px;
   right: 282px;
 }
@@ -106,69 +96,83 @@ body {
 .iconCloudBig {
   position: absolute;
   border-radius: 50%;
-  background: $cayucos;
-  height: $iconCloudBigDiameter;
-  width: $iconCloudBigDiameter;
+  background: #9cd0ff;
+  height: 36px;
+  width: 36px;
   top: 200px;
   left: 80px;
 }
+
 .iconCloudSmall {
   position: absolute;
   border-radius: 50%;
-  height: $iconCloudSmallDiameter;
-  width: $iconCloudSmallDiameter;
-  background: $svalbard;
+  height: 23.4px;
+  width: 23.4px;
+  background: #d2e9fa;
   top: 213px;
   left: 70px;
 }
+
 .iconCloudFill {
   position: absolute;
-  height: $iconCloudFillSize;
-  width: $iconCloudFillSize;
-  background: $cayucos;
+  height: 16.38px;
+  width: 16.38px;
+  background: #9cd0ff;
   top: 220px;
   left: 80px;
 }
 
-.details{
+.details {
   font-family: Roboto, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 30px;
   margin-left: 60px;
 }
+
 .temperature {
   color: white;
   font-weight: 300;
   font-size: 10em;
 }
+
 .summary {
-  color: $svalbard;
+  color: #d2e9fa;
   font-size: 2em;
   font-weight: 300;
   width: 260px;
   margin-top: -16px;
   padding-bottom: 16px;
-  border-bottom: 2px solid $cayucos;
+  border-bottom: 2px solid #9cd0ff;
   margin-left: 8px;
 }
+
 .summaryText {
   margin: 0;
   margin-left: 56px;
 }
+
 .precipitation, .wind {
-  color: $svalbard;
+  color: #d2e9fa;
   font-size: 1.6em;
   font-weight: 300;
   margin-left: 8px;
 }
+
 .precipitation {
   margin-top: 16px;
 }
+
 .wind {
   margin-top: 4px;
 }
-</style>
+/*# sourceMappingURL=style.css.map */
+    </style>
     </head>
       <div class="container h-100">
         <div class="row justify-content-center">
